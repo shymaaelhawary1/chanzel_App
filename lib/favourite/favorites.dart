@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'ProductS.dart';
+import '../../ProductS.dart';
 
 class FavoritesScreen extends StatelessWidget {
   final List<Product> favoriteProducts;
@@ -32,3 +32,5 @@ class FavoritesScreen extends StatelessWidget {
     );
   }
 }
+
+

@@ -1,21 +1,24 @@
+import 'package:chanzel_app/favourite/cubit/favourite_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'ProductS.dart';
-
 
 class ProductCard extends StatelessWidget {
   final Product product;
-  final Function(Product) onFavoriteToggle;
   final bool isFavorite;
 
-  ProductCard({
+  const ProductCard({
+    Key? key,
     required this.product,
-    required this.onFavoriteToggle,
     required this.isFavorite,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final favouriteCubit = BlocProvider.of<FavouriteCubit>(context);
+
     return Card(
+      elevation: 4.0,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -26,19 +29,37 @@ class ProductCard extends StatelessWidget {
             height: 120,
           ),
           Padding(
-            padding: const EdgeInsets.all(.0),
-            child: Text(product.title, style: const TextStyle(fontWeight: FontWeight.bold)),
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              product.title,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+            ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text('\$${product.price.toStringAsFixed(2)}'),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Text(
+              '\$${product.price.toStringAsFixed(2)}',
+              style: const TextStyle(
+                fontSize: 14,
+                color: Colors.grey,
+              ),
+            ),
           ),
           IconButton(
             icon: Icon(
               isFavorite ? Icons.favorite : Icons.favorite_border,
               color: isFavorite ? Colors.red : null,
             ),
-            onPressed: () => onFavoriteToggle(product),
+            onPressed: () {
+              if (isFavorite) {
+                favouriteCubit.removeFavorite(product);
+              } else {
+                favouriteCubit.addFavorite(product);
+              }
+            },
           ),
         ],
       ),

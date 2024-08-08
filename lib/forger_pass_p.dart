@@ -1,4 +1,3 @@
-//import 'package:first_flutter/features/registeration/view/widgets/Password_widget.dart';
 import 'package:chanzel_app/forgetcubit_cubit.dart';
 import 'package:chanzel_app/required_pass.dart';
 import 'package:chanzel_app/verif.dart';
@@ -45,7 +44,6 @@ class Forgetpassword2 extends StatelessWidget {
                               builder: (context) => const VerificationPage()),
                         );
                       }
-                      // cubit.onpressedButton,
                       ,
                       child: const Text(
                         "CHECK  ",
@@ -60,8 +58,3 @@ class Forgetpassword2 extends StatelessWidget {
     );
   }
 }
-/* Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const VerificationPage()),
-                    );*/

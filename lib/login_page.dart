@@ -11,7 +11,6 @@ class EmailPage extends StatelessWidget {
       {super.key, required this.controller2, required this.controller});
   final SigupCubit controller2;
   final LoginCubit controller;
-  // final RegerstrationCubit controller;
 
   @override
   Widget build(BuildContext context) {
@@ -31,14 +30,12 @@ class EmailPage extends StatelessWidget {
               backgroundColor: const Color.fromARGB(255, 85, 64, 203),
             ),
             body: ListView(
-              //mainAxisAlignment: MainAxisAlignment.start,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+              
               children: [
                 EmailField(
                   controller: LoginCubit(),
                 ),
                 ButtonWidget(
-                  //controller: controller,
                   controller2: controller2, controller: controller,
                 )
               ],

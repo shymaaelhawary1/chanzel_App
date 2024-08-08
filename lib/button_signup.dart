@@ -4,13 +4,11 @@ import 'package:chanzel_app/sigup_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-// ignore: must_be_immutable
 class ButtonWidget extends StatelessWidget {
   const ButtonWidget(
       {super.key, required this.controller, required this.controller2});
   final SigupCubit controller;
   final LoginCubit controller2;
-  //TextEditingController nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +26,6 @@ class ButtonWidget extends StatelessWidget {
                         color: const Color.fromARGB(183, 213, 39, 178),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      // width: double.infinity,
                       height: 30,
                       child: Center(
                         child: FilledButton(

@@ -1,11 +1,9 @@
-//import 'package:first_flutter/features/registeration/view/widgets/Email_widget.dart';
 import 'package:chanzel_app/forger_pass_p.dart';
 import 'package:chanzel_app/forgetcubit_cubit.dart';
 import 'package:chanzel_app/required_email.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-// ignore: use_key_in_widget_constructors
 class ForgetPass1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -1,10 +1,8 @@
-//import 'package:first_flutter/features/registeration/view/pages/email_login.dart';
 import 'package:chanzel_app/login_cubit.dart';
 import 'package:chanzel_app/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-// ignore: must_be_immutable
 class EmailField extends StatelessWidget {
   EmailField({super.key, required this.controller});
   TextEditingController nameController = TextEditingController();
@@ -13,8 +11,7 @@ class EmailField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-        //mainAxisAlignment: MainAxisAlignment.start,
-        // crossAxisAlignment: CrossAxisAlignment.start,
+        
         children: [
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 14),
@@ -43,11 +40,7 @@ class EmailField extends StatelessWidget {
                   controller: controller.emailController1,
                   keyboardType: TextInputType.name,
                   validator: MyValidation().validateEmail,
-                  /*  inputFormatters: [
-                    FilteringTextInputFormatter.allow(
-                        RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')),
-                    // FilteringTextInputFormatter.deny(RegExp(r'(A-Z)'))
-                  ],*/
+                  
                   decoration: decoration.copyWith())),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 7, horizontal: 10),
@@ -66,11 +59,7 @@ class EmailField extends StatelessWidget {
               controller: controller.passwordController3,
               keyboardType: TextInputType.name,
               validator: MyValidation().validatePassword,
-              /* inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp(
-                    r'^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[!@#\$&*~]).{8,}$')),
-                // FilteringTextInputFormatter.deny(RegExp(r'(A-Z)'))
-              ],*/
+              
               decoration: decoration.copyWith(
                 hintText: 'enter your password ',
                 suffixIcon: const Icon(Icons.lock),

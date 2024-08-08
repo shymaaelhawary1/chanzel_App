@@ -1,5 +1,9 @@
 import 'package:chanzel_app/home.dart';
+import 'package:chanzel_app/login_cubit.dart';
+import 'package:chanzel_app/sigup_cubit.dart';
 import 'package:flutter/material.dart';
+import 'login_page.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -82,7 +86,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('onboarding_complete', true);
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (context) => HomeScreen()),
+      MaterialPageRoute(builder: (context) => EmailPage(
+              controller2: SigupCubit(), 
+              controller: LoginCubit(),
+            )),
     );
   }
 

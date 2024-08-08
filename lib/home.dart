@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'ProductS.dart';
 import 'categroy.dart';
-import 'favorites.dart';
+import 'favourite/favorites.dart';
 
 
 class HomeScreen extends StatefulWidget {

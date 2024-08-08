@@ -1,4 +1,3 @@
-//import 'package:first_flutter/features/auth/sign_up/sign_up.dart';
 import 'package:chanzel_app/forget_pass_e.dart';
 import 'package:chanzel_app/home.dart';
 import 'package:chanzel_app/login_cubit.dart';
@@ -12,7 +11,6 @@ class ButtonWidget extends StatelessWidget {
       {super.key, required this.controller, required this.controller2});
   final LoginCubit controller;
   final SigupCubit controller2;
-  //final  CubitCubit controller;
   @override
   Widget build(BuildContext context) {
     return Column(children: [
